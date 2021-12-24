@@ -19,4 +19,9 @@ public class UserService {
                 .orElseThrow(() -> new UserNotFoundException("User is with id:" + id + " was not found!"));
         return user;
     }
+
+    public User addNewUser(User user) {
+        return userRepository.save(user);
+    }
+
 }
