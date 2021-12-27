@@ -4,14 +4,18 @@ import com.persistent.vaultpoc.execption.UserNotFoundException;
 import com.persistent.vaultpoc.model.User;
 import com.persistent.vaultpoc.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.nio.file.attribute.UserPrincipalNotFoundException;
 
+@Service("authService")
+@Transactional
 public class UserService {
 
-    private final UserRepository userRepository;
-    
     @Autowired
+    private final UserRepository userRepository;
+
     public UserService(UserRepository userRepository) {this.userRepository = userRepository; }
     
     public User getUserById(Long id){

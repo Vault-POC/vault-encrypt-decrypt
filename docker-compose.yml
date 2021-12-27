@@ -1,8 +1,8 @@
 version: '3.1'
 services:
   app:
-    container_name: springboot
-    image: springboot
+    container_name: springboot-vault
+    image: springboot-vault
     build: ./
     ports:
       - "8080:8080"
@@ -10,7 +10,7 @@ services:
       - postgresql
   postgresql:
     image: postgres
-    container_name: postgresql
+    container_name: postgresql-vault
     ports:
       - "5432:5432"
     environment:

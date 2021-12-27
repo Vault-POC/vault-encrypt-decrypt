@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
 
     @Autowired
-    private final UserService userService;
+    private UserService userService;
 
-    public UserController( UserService userService){this.userService = userService;}
+//    public UserController( UserService userService){this.userService = userService;}
 
     @GetMapping("/get/{id}")
     public ResponseEntity<User> getUser(@PathVariable("id") Long id){
