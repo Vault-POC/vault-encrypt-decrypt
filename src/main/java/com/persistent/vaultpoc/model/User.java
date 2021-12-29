@@ -1,5 +1,6 @@
 package com.persistent.vaultpoc.model;
 
+import com.persistent.vaultpoc.converter.TransitConverter;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
@@ -18,10 +19,10 @@ public class User {
 
     @Column(name="username")
     private String username;
-
+    @Convert(converter = TransitConverter.class)
     @Column(name="password")
     private String password;
-
+    @Convert(converter = TransitConverter.class)
     @Column(name="email")
     private String email;
 
@@ -56,4 +57,10 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    @Override
+    public String toString() {
+        return "User{" + "id=" + id + ", User Name='" + username + '\'' + ", User password='" + password + '\'' + ", User email="+ email + '}';
+    }
+
 }
