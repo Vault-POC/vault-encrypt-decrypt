@@ -19,6 +19,11 @@ public class DataSourceConfiguration{
     @Value("${secret.filepath}")
     private String filepath;
 
+    @Value("${postgres.host}")
+    private String postgresHost;
+
+
+
     private static Logger log = LoggerFactory.getLogger(DataSourceConfiguration.class);
 
     @Bean
@@ -26,7 +31,7 @@ public class DataSourceConfiguration{
 
         DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create();
         String[] credentials = fetchCredentials();
-        dataSourceBuilder.url("jdbc:postgresql://10.0.2.15:30042/example-db");
+        dataSourceBuilder.url(postgresHost);
         dataSourceBuilder.username(credentials[0]);
         dataSourceBuilder.password(credentials[1]);
         return dataSourceBuilder.build();

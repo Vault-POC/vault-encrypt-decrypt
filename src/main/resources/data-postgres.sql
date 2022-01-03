@@ -1,1 +1,1 @@
-INSERT INTO users(username, password, email) VALUES('username', 'password', 'useremail@gmail.com');
+<!--INSERT INTO users(username, password, email) VALUES('username', 'password', 'useremail@gmail.com');
